@@ -23,6 +23,8 @@ def commands(user,channel,message):
       irc.send('PRIVMSG %s :%s: you can find all the help you need here: http://mutualab.org.\r\n' % (channel,user))
     elif message.find(bot+': coffee')!=-1:
       coffee(channel)
+	elif message.find(bot+': dick')!=-1:
+      dick(channel)
     elif message.find('http://')!=-1:
       GimmeUrlInfos(channel, message)
     elif message.find('Hello ' + bot)!=-1:
@@ -46,6 +48,9 @@ def coffee(channel):
   irc.send("PRIVMSG %s :|      |]\n" % (channel)) 
   irc.send("PRIVMSG %s :\      / \n" % (channel)) 
   irc.send("PRIVMSG %s : `----'  \n" % (channel)) 
+
+def dick(channel):
+  irc.send("PRIVMSG %s : 8===D \n" % (channel)) 
 
 def GimmeUrlInfos(channel,message):
   link = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message) 
